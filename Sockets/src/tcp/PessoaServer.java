@@ -17,7 +17,7 @@ public class PessoaServer {
 				System.out.println("Cliente conectado: " + cliente.getInetAddress().getHostAddress());
 				ObjectInputStream entrada = new ObjectInputStream(cliente.getInputStream());
 				Pessoa pessoa = (Pessoa) entrada.readObject();
-				System.out.println(pessoa.toString());
+				System.out.println(pessoa);
 				entrada.close();
 				cliente.close();
 			}

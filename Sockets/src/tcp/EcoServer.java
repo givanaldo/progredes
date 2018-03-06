@@ -8,15 +8,17 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class EcoServer {
-	public static void main(String[] args) {
-		
-		int porta = 9999;
-		ServerSocket servidor;
-		
-		try {
-			servidor = new ServerSocket(porta);
-			String ip = InetAddress.getByName("localhost").getHostAddress();
+
+    public static void main(String[] args) {
+
+        int port = 9999;
+        ServerSocket servidor;
+
+        try {
+            servidor = new ServerSocket(port);
+            String ip = InetAddress.getByName("localhost").getHostAddress();
             System.out.printf("Servidor %s aguardando conexão na porta 9999\n", ip);
+
             while (true) {
                 Socket cliente = servidor.accept();
                 String ipCliente = cliente.getInetAddress().getHostAddress();
@@ -30,11 +32,12 @@ public class EcoServer {
                 }
                 entrada.close();
                 saida.close();
-                cliente.close();                
-                System.out.println("Conexão finalizada. Aguardando nova conexão...");      
+                cliente.close();
+                //servidor.close();
+                System.out.println("Conexão finalizada. Aguardando nova conexão...");
             }
-		} catch (IOException e) {
-			System.out.println("Erro ao abrir socket do servidor: " + e.getMessage());
-		}
-	}
+        } catch (IOException ex) {
+            System.out.println("Erro ao abrir socket do servidor.");
+        }
+    }
 }

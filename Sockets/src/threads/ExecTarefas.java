@@ -12,14 +12,12 @@ public class ExecTarefas {
             t1.start();
             t2.setName("Proc 2");
             t2.start();
-            t3.setName("Proc 2");
+            t3.setName("Proc 3");
             t3.start();
 
-            /*
             t1.join();
             t2.join();
-            t3.join();
-            */
+            t3.join();         
             
             System.out.println("Terminaram todas as Threads");
         } catch (Exception ex) {

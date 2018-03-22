@@ -19,8 +19,7 @@ public class BroadcastServer {
 
 			while (true) {
 				msg[0] = (byte) (Math.random() * 50);
-				DatagramPacket pkg = new DatagramPacket(msg, msg.length, InetAddress.getByName("10.208.255.255"),
-						porta);
+				DatagramPacket pkg = new DatagramPacket(msg, msg.length, InetAddress.getByName("10.211.255.255"), porta);
 				dgramsocket.send(pkg);
 				System.out.println("enviando via broadcast --> " + msg[0]);
 				Thread.sleep(5000);

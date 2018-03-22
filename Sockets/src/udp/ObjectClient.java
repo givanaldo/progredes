@@ -15,12 +15,11 @@ public class ObjectClient {
         try {
             addr = InetAddress.getByName("localhost");
             int port = 12345;
-            Pessoa joao = new Pessoa("Alex Carlos", 23);
+            Pessoa joao = new Pessoa("João Grandão", 45);
 
             System.out.println("enviando objeto...");
 
             ByteArrayOutputStream objArray = new ByteArrayOutputStream();
-            
             ObjectOutputStream objOutput = new ObjectOutputStream(objArray);
             objOutput.flush();
             objOutput.writeObject(joao);

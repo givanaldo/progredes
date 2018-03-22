@@ -7,7 +7,7 @@ public class Tarefa2 implements Runnable {
         for (int i = 0; i < 100; i++) {
             System.out.println(i + " - usando interface");
             try {
-                Thread.sleep(1500);
+                Thread.sleep(500);
             } catch (InterruptedException ex) {
                 System.out.println("Erro.");
             }

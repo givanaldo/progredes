@@ -7,7 +7,13 @@ public class TratamentoThread extends Thread {
 
     Socket SockCliente;
     String name;
-
+    
+    public TratamentoThread(String nameThread, Socket Cliente) {
+        name = nameThread;
+        SockCliente = Cliente;
+        this.start();
+    }
+    
     @Override
     public void run() {
         String Entrada = "INÍCIO";
@@ -29,12 +35,6 @@ public class TratamentoThread extends Thread {
             System.out.println("Falha: " + e.toString());
             System.exit(0);
         }
-    }
-
-    public TratamentoThread(String nameThread, Socket Cliente) {
-        name = nameThread;
-        SockCliente = Cliente;
-        this.start();
     }
 
     public void enviarDados(String saida, PrintWriter escritor) {

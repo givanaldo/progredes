@@ -13,7 +13,7 @@ public class CommonsSimples {
     public static void main(String[] args) {
 
         Properties login = new Properties();
-        String properties = "javamailsamples/login.properties";
+        String properties = "javamail/login.properties";
         try {
             InputStream stream = ClassLoader.getSystemClassLoader().getResourceAsStream(properties);
             login.load(stream);

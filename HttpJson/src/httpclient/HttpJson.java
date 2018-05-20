@@ -1,8 +1,5 @@
 package httpclient;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -15,7 +12,8 @@ import org.json.JSONObject;
 
 public class HttpJson {
 
-    private static String readUrl2(String urlString) throws Exception {
+/*
+	private static String readUrl2(String urlString) throws Exception {
         BufferedReader reader = null;
         try {
             URL url = new URL(urlString);
@@ -32,7 +30,7 @@ public class HttpJson {
             }
         }
     }
-
+*/
     private static String readUrl(String url) throws Exception {
         CloseableHttpClient client = HttpClients.createDefault();
         HttpGet page = new HttpGet(url);

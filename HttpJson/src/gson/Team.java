@@ -1,4 +1,4 @@
-package httpclient;
+package gson;
 
 public class Team {
     private String country;

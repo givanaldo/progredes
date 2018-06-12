@@ -1,4 +1,4 @@
-package httpclient;
+package gson;
 
 import com.google.gson.Gson;
 import org.apache.http.HttpEntity;

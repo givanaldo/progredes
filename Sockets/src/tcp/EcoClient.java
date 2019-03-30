@@ -10,8 +10,8 @@ public class EcoClient {
 
     public static void main(String[] args) throws UnknownHostException, IOException {
         
-        int port = 9999;
-        String ipServidor = "10.209.1.62";
+        int port = 5000;
+        String ipServidor = "localhost";
         
         Socket cliente = new Socket(ipServidor, port);
         System.out.println("O cliente se conectou ao servidor!");

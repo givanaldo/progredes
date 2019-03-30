@@ -10,7 +10,7 @@ public class SimpleClient {
 	public static void main(String[] args) {
 
 		int porta = 9999;
-		String ip = "localhost";
+		String ip = "127.0.0.1";
 
 		try {
 			Socket cliente = new Socket(ip, porta);

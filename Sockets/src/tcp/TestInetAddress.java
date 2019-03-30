@@ -3,10 +3,14 @@ package tcp;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+/**
+ * @author givanaldo
+ *
+ */
 public class TestInetAddress {
 	
 	public static void main(String[] args) {
-		String site = "www.uol.com.br";
+		String site = "www.ifrn.edu.br";
 		try {
 			byte[] ip = InetAddress.getByName(site).getAddress();
 			System.out.println("IP: " + ip[0] + "." + ip[1] + "." + ip[2] + "." + ip[3]);
@@ -14,7 +18,7 @@ public class TestInetAddress {
 			String otherIp = InetAddress.getByName(site).getHostAddress();
 			System.out.println("IP: " + otherIp);
 
-			byte[] uol = { -56, -35, 2, 45 };
+			byte[] uol = { -56, -119, 2, -126 };
 			String hostUol = InetAddress.getByAddress(uol).getHostName();
 			System.out.println("Hostname: " + hostUol);
 

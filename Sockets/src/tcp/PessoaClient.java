@@ -3,13 +3,21 @@ package tcp;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class PessoaClient {
 
-    public static void main(String[] args) {
+    private static Scanner teclado;
+
+	public static void main(String[] args) {
         try {
             Socket cliente = new Socket("localhost", 12345);
-            Pessoa joao = new Pessoa("João Pedro", 18);            
+            teclado = new Scanner(System.in);
+            System.out.println("Nome: ");
+            String nome = teclado.nextLine();
+            System.out.println("Idade: ");
+            int idade = teclado.nextInt();
+            Pessoa joao = new Pessoa(nome, idade);            
             ObjectOutputStream saida = new ObjectOutputStream(cliente.getOutputStream());
             saida.flush();
             saida.writeObject(joao);

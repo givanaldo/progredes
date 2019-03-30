@@ -16,7 +16,8 @@ public class DateServer {
 				Socket cliente = servidor.accept();
 				System.out.println("Cliente conectado: " + cliente.getInetAddress().getHostAddress());
 				ObjectOutputStream saida = new ObjectOutputStream(cliente.getOutputStream());
-				saida.writeObject(new Date());
+				Date dataServidor = new Date();
+				saida.writeObject(dataServidor);
 				saida.flush();
 				saida.close();
 				cliente.close();

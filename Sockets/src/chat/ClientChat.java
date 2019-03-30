@@ -9,8 +9,7 @@ import java.util.Scanner;
 public class ClientChat {
 
     public static void main(String[] args) throws UnknownHostException, IOException {
-        // dispara cliente
-        Scanner teclado = new Scanner(System.in);
+        teclado = new Scanner(System.in);
         System.out.println("Usuário: ");
         String nomeCliente = teclado.nextLine();
         new ClientChat("127.0.0.1", 12345, nomeCliente).executa();
@@ -19,6 +18,7 @@ public class ClientChat {
     private String host;
     private int porta;
     private String nome;
+	private static Scanner teclado;
 
     public ClientChat(String host, int porta, String nome) {
         this.host = host;

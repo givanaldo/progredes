@@ -6,11 +6,11 @@ public class Tarefa1 extends Thread {
     public void run() {
         for (int i = 0; i < 100; i++) {
             System.out.println(i + " - usando herança");
-            try {
-                Thread.sleep(500);
+            /*try {
+                Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 System.out.println("Erro.");
-            }
+            }*/
         }
     }
 

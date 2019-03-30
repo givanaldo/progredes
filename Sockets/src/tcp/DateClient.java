@@ -12,9 +12,9 @@ public class DateClient {
 		try {
 			Socket cliente = new Socket("localhost", 12345);
 			ObjectInputStream entrada = new ObjectInputStream(cliente.getInputStream());
-			Date data_servidor = (Date) entrada.readObject();
-			JOptionPane.showMessageDialog(null, "Data recebida do servidor: " + data_servidor.toString());
-			// System.out.println("Data recebida do servidor: " + data_atual.toString());
+			Date dataServidor = (Date) entrada.readObject();
+			JOptionPane.showMessageDialog(null, "Data recebida do servidor: " + dataServidor.toString());
+			System.out.println("Data recebida do servidor: " + dataServidor.toString());
 			entrada.close();
 			cliente.close();
 			System.out.println("Conexão encerrada");

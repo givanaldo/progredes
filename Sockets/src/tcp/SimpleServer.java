@@ -19,7 +19,6 @@ public class SimpleServer {
             byte[] ipVec = InetAddress.getByName("localhost").getAddress();
             String host = InetAddress.getByAddress(ipVec).getHostName();            
             
-
             while (true) {
                 System.out.printf("Servidor %s (%s) aguardando conexão na porta 9999\n", host, ip);
                 Socket cliente = servidor.accept();

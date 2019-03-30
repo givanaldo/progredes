@@ -14,10 +14,12 @@ public class ChangeTime implements Runnable {
     
     @Override
     public void run() {
-        SimpleDateFormat hora = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat hora = new SimpleDateFormat("hh:mm:ss");
         while (true) {
-            labelHora.setText(hora.format(new Date()));
             try {
+            	labelHora.setText(hora.format(new Date()));
+            	//Date hora = new Date();
+            	//labelHora.setText(hora.toString());
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 System.out.println("Erro: " + e.getMessage());

@@ -17,6 +17,7 @@ public class ServerChat {
     private int porta;
     // array de streams dos clientes conectados
     private List<PrintStream> clientes;
+	private ServerSocket servidor;
 
     public ServerChat(int porta) {
         this.porta = porta;
@@ -24,7 +25,7 @@ public class ServerChat {
     }
 
     public void executa() throws IOException {
-        ServerSocket servidor = new ServerSocket(this.porta);
+        servidor = new ServerSocket(this.porta);
         System.out.println("Porta 12345 aberta!");
 
         while (true) {

@@ -16,7 +16,7 @@ public class SimpleServer {
 			try {
 				System.out.println("Servidor UDP. Aguardando mensagem...");
 				dgramsocket = new DatagramSocket(porta);
-				byte[] msg = new byte[256];
+				byte[] msg = new byte[512];
 				dgrampack = new DatagramPacket(msg, msg.length);
 				dgramsocket.receive(dgrampack);
 				System.out.println("Mensagem: " + new String(dgrampack.getData()));

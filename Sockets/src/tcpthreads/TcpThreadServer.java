@@ -24,6 +24,7 @@ public class TcpThreadServer {
 			while (true) {
 				socketCliente = socketServidor.accept();
 				TratamentoThread clienteThread = new TratamentoThread("Cliente:  " + socketCliente.toString(), socketCliente);
+				new Thread(clienteThread).start();
 			}
 		} catch (IOException e) {
 			System.out.println("Falha : " + e.toString());

@@ -10,12 +10,10 @@ import java.util.List;
 public class ServerChat {
 
     public static void main(String[] args) throws IOException {
-        // inicia o servidor
         new ServerChat(12345).executa();
     }
 
     private int porta;
-    // array de streams dos clientes conectados
     private List<PrintStream> clientes;
 	private ServerSocket servidor;
 
@@ -29,11 +27,9 @@ public class ServerChat {
         System.out.println("Porta 12345 aberta!");
 
         while (true) {
-            // aceita um cliente
             Socket cliente = servidor.accept();
 
-            System.out.println("Nova conexão com o cliente "
-                    + cliente.getInetAddress().getHostAddress());
+            System.out.println("Nova conexão com o cliente " + cliente.getInetAddress().getHostAddress());
 
             // adiciona saida do cliente à lista
             PrintStream ps = new PrintStream(cliente.getOutputStream());
@@ -55,7 +51,6 @@ public class ServerChat {
     }
     
     public void clientesConectados() {
-        // listar os clientes conectados
-        // TO DO
+    		
     }
 }

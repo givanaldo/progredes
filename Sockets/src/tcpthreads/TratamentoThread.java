@@ -3,7 +3,7 @@ package tcpthreads;
 import java.io.*;
 import java.net.*;
 
-public class TratamentoThread extends Thread {
+public class TratamentoThread implements Runnable {
 
     Socket SockCliente;
     String name;
@@ -11,7 +11,6 @@ public class TratamentoThread extends Thread {
     public TratamentoThread(String nameThread, Socket Cliente) {
         name = nameThread;
         SockCliente = Cliente;
-        this.start();
     }
     
     @Override

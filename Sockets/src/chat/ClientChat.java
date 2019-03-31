@@ -10,7 +10,7 @@ public class ClientChat {
 
     public static void main(String[] args) throws UnknownHostException, IOException {
         teclado = new Scanner(System.in);
-        System.out.println("Usuário: ");
+        System.out.print("Usuário: ");
         String nomeCliente = teclado.nextLine();
         new ClientChat("127.0.0.1", 12345, nomeCliente).executa();
     }

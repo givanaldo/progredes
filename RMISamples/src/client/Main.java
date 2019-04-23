@@ -3,7 +3,7 @@ package client;
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
-import server.ICalculadora;
+import interfaces.ICalculadora;
 
 public class Main {
 

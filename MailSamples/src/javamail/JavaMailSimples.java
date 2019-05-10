@@ -50,10 +50,10 @@ public class JavaMailSimples {
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
-            message.addRecipients(Message.RecipientType.TO, InternetAddress.parse("givanaldo@gmail.com"));
+            message.addRecipients(Message.RecipientType.TO, InternetAddress.parse("givanaldoifrn@hotmail.com"));
             //message.addRecipients(Message.RecipientType.CC, InternetAddress.parse("outroemail@gmail.com"));
             message.setSubject("Enviando email com JavaMail via Hotmail");
-            String msg = "Enviei este <i>e-mail</i> utilizando <b>JavaMail</b>.";
+            String msg = "Enviei este <h2><i>e-mail</i></h2> utilizando <h1>JavaMail</h1>.";
             message.setContent(msg, "text/html");
             Transport.send(message);
             System.out.println("Mensagem enviada.");

@@ -35,9 +35,13 @@ public class HttpJsonSaude {
                 String uf = arrayUpas.getJSONObject(2).getString("uf");
                 String bairro = arrayUpas.getJSONObject(5).getString("no_bairro");
                 String fone = arrayUpas.getJSONObject(8).getString("nu_telefone");
+                String endereco = arrayUpas.getJSONObject(7).getString("no_logradouro");
                 
-                System.out.printf("%s (%s - %s) \nBairro: %s - Telefone: %s \n\n", 
-                    nomeFantasia, cidade, uf, bairro, fone);
+                if (uf.equals("RN")) {
+                    System.out.printf("%s (%s - %s) \nBairro: %s - Telefone: %s \n", 
+                        nomeFantasia, cidade, uf, bairro, fone);
+                    System.out.println("Endereço: " + endereco + "\n");
+                }
             }            
         } catch (JSONException e) {
             System.out.println("Erro JSON: " + e.getMessage());

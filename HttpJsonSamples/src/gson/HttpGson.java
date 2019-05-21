@@ -25,7 +25,6 @@ public class HttpGson {
             Gson gson = new Gson();
             Match[] matches = gson.fromJson(jsonFile, Match[].class);
             for (Match match : matches) {
-                int matchNumber = match.getMatchNumber();
                 String location = match.getLocation();
                 String homeTeam = match.getHomeTeam().getCountry();
                 int homeTeamGoals = match.getHomeTeam().getGoals();
@@ -33,24 +32,26 @@ public class HttpGson {
                 int awayTeamGoals = match.getAwayTeam().getGoals();
 
                 // Exibir apenas os jogos do Brasil
-                if (homeTeam.equals("Brazil") || awayTeam.equals("Brazil")) {
-                    System.out.printf("Jogo %d: %s %d x %d %s [%s] \n",
-                            matchNumber, homeTeam, homeTeamGoals, awayTeamGoals, awayTeam, location);
-                    System.out.println(homeTeam + ": ");                    
+                if (homeTeam.equals("France") || awayTeam.equals("France")) {
+                    System.out.printf("Jogo: %s %d x %d %s [%s] \n", homeTeam, homeTeamGoals, awayTeamGoals, awayTeam, location);
+                    
+                    System.out.println("* " + homeTeam + ": ");                    
                     for (Event homeEvent : match.getHomeTeamEvents()) {
                         String tipo = homeEvent.getType();
                         String jogador = homeEvent.getPlayer();
                         String tempo = homeEvent.getTime();
-                        System.out.printf("-- %s, %s, %s\n", tipo, jogador, tempo);
+                        if (tipo.equals("goal") || tipo.equals("goal-penalty") || tipo.equals("goal-own"))
+                            System.out.printf("-- %s, %s, %s\n", tipo, jogador, tempo);
                     }
-                    System.out.println(awayTeam + ": ");
+                    System.out.println("* " + awayTeam + ": ");
                     for (Event awayEvent : match.getAwayTeamEvents()) {
                         String tipo = awayEvent.getType();
                         String jogador = awayEvent.getPlayer();
                         String tempo = awayEvent.getTime();
-                        System.out.printf("-- %s, %s, %s\n", tipo, jogador, tempo);
+                        if (tipo.equals("goal") || tipo.equals("goal-penalty") || tipo.equals("goal-own"))
+                            System.out.printf("-- %s, %s, %s\n", tipo, jogador, tempo);
                     }
-
+                    System.out.println("\n");
                 }
             }
         } catch (Exception e) {

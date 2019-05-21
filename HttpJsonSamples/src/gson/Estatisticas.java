@@ -43,7 +43,7 @@ public class Estatisticas {
 
 	public static void main(String[] args) {
 
-		TreeMap<String, Integer> mapGoals = new TreeMap<>();
+		HashMap<String, Integer> mapGoals = new HashMap<>();
 		HashMap<String, Integer> mapYellow = new HashMap<>();
 		HashMap<String, Integer> mapRed = new HashMap<>();
 
@@ -54,7 +54,6 @@ public class Estatisticas {
 			Match[] matches = gson.fromJson(jsonFile, Match[].class);
 			for (Match match : matches) {
 				String homeTeam = match.getHomeTeam().getCountry();
-
 				for (Event homeEvent : match.getHomeTeamEvents()) {
 					String tipo = homeEvent.getType();
 					String jogador = homeEvent.getPlayer();
@@ -83,7 +82,7 @@ public class Estatisticas {
 							mapRed.put(chave, 1);
 					}
 				}
-				// System.out.println(awayTeam + ": ");
+				String awayTeam = match.getAwayTeam().getCountry();
 				for (Event awayEvent : match.getAwayTeamEvents()) {
 					String tipo = awayEvent.getType();
 					String jogador = awayEvent.getPlayer();
@@ -91,7 +90,7 @@ public class Estatisticas {
 					// System.out.printf("-- %s, %s, %s\n", tipo, jogador, tempo);
 
 					if (tipo.equals("goal") || tipo.equals("goal-penalty")) {
-						String chave = jogador + " (" + homeTeam + ")";
+						String chave = jogador + " (" + awayTeam + ")";
 						if (mapGoals.containsKey(chave))
 							mapGoals.put(chave, mapGoals.get(chave) + 1);
 						else
@@ -99,14 +98,14 @@ public class Estatisticas {
 					}
 					
 					if (tipo.equals("yellow-card")) {
-						String chave = jogador + " (" + homeTeam + ")";
+						String chave = jogador + " (" + awayTeam + ")";
 						if (mapYellow.containsKey(chave))
 							mapYellow.put(chave, mapYellow.get(chave) + 1);
 						else
 							mapYellow.put(chave, 1);
 					}
 					if (tipo.equals("red-card")) {
-						String chave = jogador + " (" + homeTeam + ")";
+						String chave = jogador + " (" + awayTeam + ")";
 						if (mapRed.containsKey(chave))
 							mapRed.put(chave, mapRed.get(chave) + 1);
 						else

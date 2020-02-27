@@ -9,7 +9,7 @@ public class PessoaClient {
 
     private static Scanner teclado;
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         try {
             Socket cliente = new Socket("localhost", 12345);
             teclado = new Scanner(System.in);
@@ -17,10 +17,9 @@ public class PessoaClient {
             String nome = teclado.nextLine();
             System.out.println("Idade: ");
             int idade = teclado.nextInt();
-            Pessoa joao = new Pessoa(nome, idade);            
             ObjectOutputStream saida = new ObjectOutputStream(cliente.getOutputStream());
             saida.flush();
-            saida.writeObject(joao);
+            saida.writeObject(new Pessoa(nome, idade));
             saida.close();
             cliente.close();
             System.out.println("Objeto enviado com êxito");

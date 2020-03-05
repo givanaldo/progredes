@@ -13,12 +13,12 @@ public class ChatClient {
 		int port = 9999;
 		String ipServidor = "localhost";
 
-		Socket cliente = new Socket(ipServidor, port);
+		Socket servidor = new Socket(ipServidor, port);
 		System.out.println("O cliente se conectou ao servidor! Iniciando chat...");
 
 		Scanner teclado = new Scanner(System.in);
-		Scanner entrada = new Scanner(cliente.getInputStream());
-		PrintStream saida = new PrintStream(cliente.getOutputStream());
+		Scanner entrada = new Scanner(servidor.getInputStream());
+		PrintStream saida = new PrintStream(servidor.getOutputStream());
 		String mensagem;
 		System.out.print("cliente: ");
 		while (teclado.hasNextLine()) {			
@@ -33,7 +33,7 @@ public class ChatClient {
 		entrada.close();
 		saida.close();
 		teclado.close();
-		cliente.close();
+		servidor.close();
 		System.out.println("Conexão finalizada.");
 	}
 }

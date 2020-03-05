@@ -11,13 +11,12 @@ public class EcoServer {
 
     public static void main(String[] args) {
 
-        int port = 5000;
+        int porta = 5000;
         ServerSocket servidor;
 
         try {
-            servidor = new ServerSocket(port);
-            String ip = InetAddress.getByName("localhost").getHostAddress();
-            System.out.printf("Servidor %s aguardando conexão na porta %d\n", ip, port);
+            servidor = new ServerSocket(porta);
+            System.out.printf("Servidor aguardando conexão na porta %d\n", porta);
 
             while (true) {
                 Socket cliente = servidor.accept();

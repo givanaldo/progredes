@@ -18,9 +18,9 @@ public class TestInetAddress {
 			String otherIp = InetAddress.getByName(site).getHostAddress();
 			System.out.println("IP: " + otherIp);
 
-			byte[] uol = { -56, -119, 2, -126 };
-			String hostUol = InetAddress.getByAddress(uol).getHostName();
-			System.out.println("Hostname: " + hostUol);
+			byte[] ifrn = { -56, -119, 2, -126 };
+			String hostIfrn = InetAddress.getByAddress(ifrn).getHostName();
+			System.out.println("Hostname: " + hostIfrn);
 
 			byte[] localhost = { 127, 0, 0, 1 };
 			String host = InetAddress.getByAddress(localhost).getHostName();

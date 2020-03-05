@@ -7,34 +7,35 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class SimpleClient {
-	public static void main(String[] args) {
 
-		int porta = 9999;
-		String ip = "127.0.0.1";
+    public static void main(String[] args) {
 
-		try {
-			Socket cliente = new Socket(ip, porta);
+        int porta = 9999;
+        String ip = "10.211.1.11";
 
-			System.out.printf("O cliente se conectou ao servidor %s.\n\n", ip);
+        try {
+            Socket cliente = new Socket(ip, porta);
 
-			Scanner teclado = new Scanner(System.in);
+            System.out.printf("O cliente se conectou ao servidor %s.\n\n", ip);
 
-			// stream para enviar dados para o servidor
-			PrintStream saida = new PrintStream(cliente.getOutputStream());
+            Scanner teclado = new Scanner(System.in);
 
-			System.out.print("texto para enviar: ");
-			while (teclado.hasNextLine()) {
-				saida.println(teclado.nextLine());
-				System.out.print("texto para enviar: ");
-			}
+            // stream para enviar dados para o servidor
+            PrintStream saida = new PrintStream(cliente.getOutputStream());
 
-			saida.close();
-			teclado.close();
-			cliente.close();
-		} catch (UnknownHostException e) {
-			System.out.println("Erro de conexão: " + e.getMessage());
-		} catch (IOException e) {
-			System.out.println("Erro de I/O: " + e.getMessage());
-		}
-	}
+            System.out.print("texto para enviar: ");
+            while (teclado.hasNextLine()) {
+                saida.println(teclado.nextLine());
+                System.out.print("texto para enviar: ");
+            }
+
+            saida.close();
+            teclado.close();
+            cliente.close();
+        } catch (UnknownHostException e) {
+            System.out.println("Erro de conexão: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Erro de I/O: " + e.getMessage());
+        }
+    }
 }

@@ -24,14 +24,15 @@ public class SimpleServer {
                 Socket cliente = servidor.accept();
 
                 // conectou!!!
-                System.out.println("Nova conexão com o cliente " + cliente.getInetAddress().getHostAddress());
+                String hostCliente = cliente.getInetAddress().getHostAddress();
+                System.out.println("Nova conexão com o cliente " + hostCliente);
 
                 // Stream para receber dados do cliente
                 Scanner entrada = new Scanner(cliente.getInputStream());
                 
                 while (entrada.hasNextLine()) {
-                    String texto = entrada.nextLine();
-                    System.out.println("texto recebido: " + texto);
+                    String mensagem = entrada.nextLine();
+                    System.out.println("Mensagem recebida de " + hostCliente + ": " + mensagem);
                 }
                 
                 entrada.close();

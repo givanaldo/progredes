@@ -15,7 +15,7 @@ public class ObjectClient {
         try {
             addr = InetAddress.getByName("localhost");
             int port = 12345;
-            Pessoa joao = new Pessoa("João Maria", 45);
+            Pessoa joao = new Pessoa("João da Silva", 34);
 
             System.out.println("enviando objeto...");
 

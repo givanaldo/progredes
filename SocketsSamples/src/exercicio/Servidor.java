@@ -38,6 +38,8 @@ public class Servidor {
                 out.write(buffer, 0, lidos);
             }
             out.flush();
+            //clSocket.close();
+            //server.close();
         } catch (Exception ex) {
             System.out.println("ERRO: " + ex.getMessage());
         }

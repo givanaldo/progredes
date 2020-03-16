@@ -18,7 +18,7 @@ public class Cliente {
             
             //-System.out.println(System.getProperty("user.dir"););
             
-            File arquivo = new File("/Users/Downloads/" + nomeArquivo);
+            File arquivo = new File("/Users/givanaldo/Downloads/" + nomeArquivo);
             FileInputStream arquivoStream = new FileInputStream(arquivo);
 
             Socket cliente = new Socket("localhost", 5555);
@@ -37,7 +37,7 @@ public class Cliente {
             while ((lidos = arquivoStream.read(buffer, 0, tamanho)) != -1) {
                 saida.write(buffer, 0, lidos);
             }
-            cliente.close();
+            //cliente.close();
         } catch (IOException ex) {
             System.out.println("ERRO: " + ex.getMessage());
         }

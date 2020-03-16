@@ -15,7 +15,7 @@ public class SimpleClient {
         try {
             host = InetAddress.getByName("localhost");
             int porta = 12345;
-            
+
             while (true) {
                 System.out.print("Digite a mensagem: ");
                 String mensagem = teclado.nextLine();

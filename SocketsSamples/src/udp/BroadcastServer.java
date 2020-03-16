@@ -18,7 +18,7 @@ public class BroadcastServer {
 			System.out.println("...servidor online...");
 
 			while (true) {
-				msg[0] = (byte) (Math.random() * 50);
+				msg[0] = (byte) (Math.random() * 100);
 				DatagramPacket pkg = new DatagramPacket(msg, msg.length, InetAddress.getByName("10.209.255.255"), porta);
 				dgramsocket.send(pkg);
 				System.out.println("enviando via broadcast --> " + msg[0]);
